@@ -7,25 +7,10 @@
                     <span>前端资源</span>
                 </div>
                 <div class="item-list">
-                    
-                    <el-col :span="3">
-                        <el-tooltip content="Vue.js官网" placement="top" effect="light">
-                             <a href="https://cn.vuejs.org/" class="title">Vue.js官网</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="Vue技术内幕，逐行级别的 Vue 源码分析" placement="top" effect="light">
-                             <a href="http://hcysun.me/vue-design/" class="title">Vue.js源码分析</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="Element UI" placement="top" effect="light">
-                             <a href="http://element-cn.eleme.io/#/zh-CN" class="title">Element UI</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="技术胖 前端免费技术学习视频" placement="top" effect="light">
-                             <a href="http://jspang.com/" class="title">技术胖</a>
+                    <el-col :span="3" v-for = "(item , i) in felists" >
+                        <el-tooltip placement="top" effect="light">
+                            <div slot="content">{{item.content}}</div>
+                            <a :href="item.url" class="title">{{item.title}}</a>
                         </el-tooltip>
                     </el-col>
                 </div>
@@ -118,8 +103,35 @@
 <script>
     import TopNav from '@/components/common/TopNav'
     import FooterNav from '@/components/common/FooterNav'
-    export default {
+    export default{
         name:'source_sites',
+        data(){
+                return{
+                    'felists' : [
+                        {
+                            'content' : 'Vue.js官网',
+                            'url' : 'https://cn.vuejs.org/',
+                            'title' : 'Vue.js官网',
+                        },
+                        {
+                            'content' : 'Vue技术内幕，逐行级别的 Vue 源码分析',
+                            'url' : 'http://hcysun.me/vue-design/',
+                            'title' : 'Vue.js源码分析',
+                        },
+                        {
+                            'content' : 'Element UI',
+                            'url' : 'http://element-cn.eleme.io/#/zh-CN',
+                            'title' : 'Element UI',
+                        },
+                        {
+                            'content' : '技术胖 前端免费技术学习视频',
+                            'url' : 'http://jspang.com',
+                            'title' : '技术胖免费前端学习',
+                        }
+                    ],
+                    'loading' :true
+                }
+        },
         components:{
             TopNav,
             FooterNav
