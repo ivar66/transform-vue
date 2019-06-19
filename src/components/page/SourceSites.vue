@@ -22,27 +22,12 @@
                     <span>后端资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3">
-                        <el-tooltip content="PHP官网" placement="top" effect="light">
-                             <a href="http://www.php.net/" class="title">PHP官网</a>
+                    <el-col :span="3" v-for = "(item , i) in backendLists" >
+                        <el-tooltip placement="top" effect="light">
+                            <div slot="content">{{item.content}}</div>
+                            <a :href="item.url" class="title">{{item.title}}</a>
                         </el-tooltip>
                     </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="LaravelChina社区" placement="top" effect="light">
-                             <a href="https://laravel-china.org/" class="title">LaravelChina社区</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="Laravel学院" placement="top" effect="light">
-                             <a href="http://laravelacademy.org/" class="title">Laravel学院</a>
-                        </el-tooltip>
-                    </el-col>      
-                    <el-col :span="3">
-                        <el-tooltip content="laravel-admin是一个可以快速帮你构建后台管理的工具" placement="top" effect="light">
-                             <a href="http://laravel-admin.org/docs/#/zh/" class="title">laravel-admin</a>
-                        </el-tooltip>
-                    </el-col>   
-                             
                 </div>
             </el-card>
             <el-card class="box-card">
@@ -129,6 +114,28 @@
                             'title' : '技术胖免费前端学习',
                         }
                     ],
+                    'backendLists' :[
+                        {
+                            'content' : 'PHP官网',
+                            'url' : 'http://www.php.net/',
+                            'title' : 'PHP官网',
+                        },
+                        {
+                            'content' : 'LaravelChina社区',
+                            'url' : 'https://laravel-china.org/',
+                            'title' : 'LaravelChina社区',
+                        },
+                        {
+                            'content' : 'laravel-admin是一个可以快速帮你构建后台管理的工具',
+                            'url' : 'http://laravel-admin.org/docs/#/zh/',
+                            'title' : 'laravel-admin',
+                        },
+                        {
+                            'content' : 'Laravel学院',
+                            'url' : 'http://laravelacademy.org/',
+                            'title' : 'Laravel学院',
+                        },
+                    ],
                     'loading' :true
                 }
         },
@@ -187,7 +194,9 @@
         font-size: 16px;
         border: 0.0625rem dashed #e6e8eb;
     }
-
+    .el-tooltip{
+        width: auto;
+    }
 </style>
 
 
