@@ -2,8 +2,12 @@
     <div class="about-us">
         <el-header> <top-nav></top-nav></el-header>
         <el-main>
+            <div class="timer-title">
+                <h1>时光轴</h1>
+            </div>
+            <el-divider></el-divider>
             <el-timeline>
-                <el-timeline-item timestamp="2019/6/18" placement="top">
+                <el-timeline-item timestamp="2019/6/18" placement="top" type="success">
                     <el-card>
                         <h4>添加时光轴页面</h4>
                         <!--<p>王小虎 提交于 2018/4/2 20:46</p>-->
@@ -45,6 +49,13 @@ export default {
 </script>
 
 <style scoped>
+    .timer-title h1{
+        text-align: center;
+    }
+    .el-divider{
+        max-width: 700px;
+        margin: 50px auto;
+    }
     .el-header{
         padding:0;
     }
