@@ -7,13 +7,19 @@
             </div>
             <el-divider></el-divider>
             <el-timeline>
+                <el-timeline-item timestamp="2019/6/20" size="large" placement="top" type="success">
+                    <el-card>
+                        <h4>Fix 时光轴基础样式</h4>
+                        <p>本次调整了时光轴基础的一些样式，增加了一些简单的标签，让展示变的更好</p>
+                    </el-card>
+                </el-timeline-item>
                 <el-timeline-item timestamp="2019/6/18" placement="top" type="success">
                     <el-card>
                         <h4>添加时光轴页面</h4>
                         <!--<p>王小虎 提交于 2018/4/2 20:46</p>-->
                     </el-card>
                 </el-timeline-item>
-                <el-timeline-item timestamp="2019/6/17" placement="top">
+                <el-timeline-item timestamp="2019/6/17" placement="top" type="primary">
                     <el-card>
                         <h4>重构十月的首页</h4>
                         <!--<p>王小虎 提交于 2018/4/3 20:46</p>-->
@@ -42,7 +48,7 @@ import FooterNav from '@/components/common/FooterNav'
 export default {
     name:'about us',
     components:{
-       TopNav,
+        TopNav,
         FooterNav
     }
 }
