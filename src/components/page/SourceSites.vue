@@ -7,12 +7,12 @@
                     <span>前端资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3" v-for = "(item,index) in felists" :key="index" >
-                        <el-tooltip placement="top" effect="light">
+                    <!--<el-col :span="3"  >-->
+                        <el-tooltip placement="top" effect="light" v-for = "(item,index) in frontLists" :key="index">
                             <div slot="content">{{item.content}}</div>
-                            <a :href="item.url" class="title">{{item.title}}</a>
+                            <a :href="item.url" class="title"><el-tag type="success">{{item.title}}</el-tag></a>
                         </el-tooltip>
-                    </el-col>
+                    <!--</el-col>-->
                 </div>
                 
             </el-card>
@@ -22,45 +22,22 @@
                     <span>后端资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3" v-for = "(item , index_backend) in backendLists" :key="index_backend" >
-                        <el-tooltip placement="top" effect="light">
-                            <div slot="content">{{item.content}}</div>
-                            <a :href="item.url" class="title">{{item.title}}</a>
-                        </el-tooltip>
-                    </el-col>
+                    <el-tooltip placement="top" effect="light" v-for = "(item,index_backend) in backendLists" :key="index_backend">
+                        <div slot="content">{{item.content}}</div>
+                        <a :href="item.url" class="title"><el-tag type="info">{{item.title}}</el-tag></a>
+                    </el-tooltip>
                 </div>
             </el-card>
+
             <el-card class="box-card">
                 <div slot="header" class="clearfix">
                     <span>社区资源</span>
                 </div>
                 <div class="item-list">
-                    
-                    <el-col :span="3">
-                         <el-tooltip content="SegmentFault" placement="top" effect="light">
-                             <a href="https://segmentfault.com/" class="title">SegmentFault</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="掘金" placement="top" effect="light">
-                             <a href="https://juejin.im/" class="title">掘金</a>
-                        </el-tooltip>
-                    </el-col>         
-                    <el-col :span="3">
-                        <el-tooltip content="开发手册" placement="top" effect="light">
-                             <a href="https://docs.segmentfault.com/" class="title">技术开发手册</a>
-                        </el-tooltip>
-                    </el-col>                    
-                    <el-col :span="3">
-                        <el-tooltip content="阿里妈妈前端团队出品的开源接口管理工具RAP第二代" placement="top" effect="light">
-                             <a href="https://github.com/thx/rap2-delos" class="title">RAP接口管理工具</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="Love2.io 是一个全新的开源技术文档分享平台，很多优秀的技术文档" placement="top" effect="light">
-                             <a href="https://github.com/thx/rap2-delos" class="title">Love2.io</a>
-                        </el-tooltip>
-                    </el-col>
+                    <el-tooltip placement="top" effect="light" v-for = "(item,index_social) in socialLists" :key="index_social">
+                        <div slot="content">{{item.content}}</div>
+                        <a :href="item.url" class="title"><el-tag type="danger">{{item.title}}</el-tag></a>
+                    </el-tooltip>
                 </div>
             </el-card>
             <el-card class="box-card">
@@ -68,16 +45,10 @@
                     <span>工具资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3">
-                        <el-tooltip content="爱情守望者" placement="top" effect="light">
-                             <a href="https://www.waitsun.com/" class="title">爱情守望者</a>
-                        </el-tooltip>
-                    </el-col>
-                    <el-col :span="3">
-                        <el-tooltip content="漂亮的代码截图" placement="top" effect="light">
-                             <a href="https://carbon.now.sh/" class="title">Carbon代码截图</a>
-                        </el-tooltip>
-                    </el-col>                      
+                    <el-tooltip placement="top" effect="light" v-for = "(item,index_tools) in backendLists" :key="index_tools">
+                        <div slot="content">{{item.content}}</div>
+                        <a :href="item.url" class="title"><el-tag type="warning">{{item.title}}</el-tag></a>
+                    </el-tooltip>
                 </div>
             </el-card>
         </div>
@@ -92,7 +63,7 @@
         name:'source_sites',
         data(){
                 return{
-                    'felists' : [
+                    'frontLists' : [
                         {
                             'content' : 'Vue.js官网',
                             'url' : 'https://cn.vuejs.org/',
@@ -126,15 +97,49 @@
                             'title' : 'LaravelChina社区',
                         },
                         {
-                            'content' : 'laravel-admin是一个可以快速帮你构建后台管理的工具',
+                            'content' : 'Laravel-admin是一个可以快速帮你构建后台管理的工具',
                             'url' : 'http://laravel-admin.org/docs/#/zh/',
-                            'title' : 'laravel-admin',
+                            'title' : 'Laravel-admin',
                         },
                         {
                             'content' : 'Laravel学院',
                             'url' : 'http://laravelacademy.org/',
                             'title' : 'Laravel学院',
                         },
+                    ],
+                    'socialLists':[
+                        {
+                            'content' : 'Love2.io 是一个全新的开源技术文档分享平台，很多优秀的技术文档',
+                            'url' : 'https://github.com/thx/rap2-delos',
+                            'title' : 'Love2.io',
+                        },
+                        {
+                            'content' : '阿里妈妈前端团队出品的开源接口管理工具RAP第二代',
+                            'url' : 'https://github.com/thx/rap2-delos',
+                            'title' : 'RAP接口管理工具',
+                        },
+                        {
+                            'content' : '开发手册',
+                            'url' : 'https://docs.segmentfault.com/',
+                            'title' : '技术开发手册',
+                        },
+                        {
+                            'content' : '掘金',
+                            'url' : 'https://juejin.im/',
+                            'title' : '掘金',
+                        }
+                    ],
+                    'toolLists':[
+                        {
+                            'content' : '爱情守望者',
+                            'url' : 'https://www.waitsun.com/',
+                            'title' : '爱情守望者',
+                        },
+                        {
+                            'content' : '漂亮的代码截图',
+                            'url' : 'https://carbon.now.sh/',
+                            'title' : '漂亮的代码截图',
+                        }
                     ],
                     'loading' :true
                 }
@@ -152,7 +157,7 @@
         width: 1000px;
         display: flex;
         flex-direction: column;
-        margin: 20px auto;
+        margin: 10px auto;
     }
     .clearfix{
         text-align: left;
@@ -167,35 +172,22 @@
     }
     .box-card {
         width: 1000px;
-        text-align: left;
-        margin-top: 20px;
+        margin-bottom: 20px;
         height: 100%;
     }
     .box-card .item-list{
         padding: 2px;
-        height: 140px;
-        line-height: 30px;
-          /* display: flex; */
-          /* flex-direction: row; */
+        min-height: 120px;
+        line-height: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    .box-card{
-        float: left;
-    }
-    .box-card a{
-        text-decoration: none;
-        color: #999b9d;
-        margin: 4px auto;
-        width: 100px;
-        text-align: left;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow: ellipsis;
-        display: block;
-        font-size: 16px;
-        border: 0.0625rem dashed #e6e8eb;
-    }
-    .el-tooltip{
-        width: auto;
+    .box-card .item-list a{
+        margin-left: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 25px;
     }
 </style>
 
