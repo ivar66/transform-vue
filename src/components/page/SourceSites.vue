@@ -7,7 +7,7 @@
                     <span>前端资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3" v-for = "(item , i) in felists" >
+                    <el-col :span="3" v-for = "(item,index) in felists" :key="index" >
                         <el-tooltip placement="top" effect="light">
                             <div slot="content">{{item.content}}</div>
                             <a :href="item.url" class="title">{{item.title}}</a>
@@ -22,7 +22,7 @@
                     <span>后端资源</span>
                 </div>
                 <div class="item-list">
-                    <el-col :span="3" v-for = "(item , i) in backendLists" >
+                    <el-col :span="3" v-for = "(item , index_backend) in backendLists" :key="index_backend" >
                         <el-tooltip placement="top" effect="light">
                             <div slot="content">{{item.content}}</div>
                             <a :href="item.url" class="title">{{item.title}}</a>
