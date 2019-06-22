@@ -83,6 +83,11 @@
                             'content' : '技术胖 前端免费技术学习视频',
                             'url' : 'http://jspang.com',
                             'title' : '技术胖免费前端学习',
+                        },
+                        {
+                            'content' : '一套基于 Vue.js 的高质量UI 组件库',
+                            'url' : 'https://www.iviewui.com/',
+                            'title' : 'iView组件库',
                         }
                     ],
                     'backendLists' :[
