@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Index from '@/components/page/Index'
+import Index2 from '@/components/page/Index2'
 import AboutUs from '@/components/page/AboutUs'
 import ProjectDemo from '@/components/page/ProjectDemo'
 import SourceSites from '@/components/page/SourceSites'
@@ -20,6 +21,11 @@ export default new Router({
             path: "/",
             name: "index",
             component: Index
+        },
+        {
+            path: "/2",
+            name: "index2",
+            component: Index2
         },
         {
             path: "/blogs",
