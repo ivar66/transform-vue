@@ -7,6 +7,12 @@
             </div>
             <el-divider></el-divider>
             <el-timeline>
+                <el-timeline-item timestamp="2019/6/27" size="large" placement="top" type="success">
+                    <el-card>
+                        <h4>Fix 首页列表页 重构</h4>
+                        <p>本次调整调整了首页的列表，删除了一些重复无用代码</p>
+                    </el-card>
+                </el-timeline-item>
                 <el-timeline-item timestamp="2019/6/26" size="large" placement="top" type="success">
                     <el-card>
                         <h4>Fix 首页重构 && nav重构</h4>

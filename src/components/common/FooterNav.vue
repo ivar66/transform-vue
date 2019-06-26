@@ -20,6 +20,7 @@
 
 <style scoped>
     .footer{
+        background:#f0f2f5 ;
         /*margin-top: 100px;*/
         text-align: center;
         border-top: 1px solid #EEE;
