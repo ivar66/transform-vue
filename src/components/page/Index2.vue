@@ -4,10 +4,10 @@
         <el-main>
             <template>
                 <el-carousel indicator-position="outside">
-                    <el-carousel-item v-for="item in 1" :key="item">
+                    <el-carousel-item v-for="(item,index) in banner_list" :key="index">
                         <div class="scoll-div">
-                            <a href="http://baidu.com">
-                                <img :src="'http://blog.lovecathy.cn/image/show/articles-2019-06-zuuta6p55d0e34364f61a.png'" class="scoll-img">
+                            <a :href = "item.banner_url">
+                                <img :src="'http://blog.lovecathy.cn/image/show/'+ item.banner_pic_url" class="scoll-img">
                             </a>
                         </div>
                         <!--<h3>{{ item }}</h3>-->
@@ -23,12 +23,29 @@
 <script>
     import TopNav from '@/components/common/TopNav'
     import FooterNav from '@/components/common/FooterNav'
+    import axios from 'axios'
 
     export default {
+        data(){
+            return {
+                'banner_list':[]
+            }
+        },
         name: "Index2",
         components:{
             TopNav,
             FooterNav,
+        },
+        created(){
+            axios.get('http://blog.lovecathy.cn/api/banner/banner_lists')
+                .then(response=>{
+                    console.log(response);
+                    this.banner_list = response.data.data
+                })
+                .catch(error=>{
+                    console.log(error);
+                    alert('网络错误，不能访问');
+                });
         },
 
     }

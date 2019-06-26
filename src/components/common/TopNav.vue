@@ -5,11 +5,11 @@
 			</div>
 			<ul>
 				<li><a href="/" class="active">首页</a></li>
-				<li><a href="/blogs" class="active">文章</a></li>
+				<!--<li><a href="/blogs" class="active">文章</a></li>-->
                 <!--<li><a href="/project_demos">作品集</a></li>-->
-                <li><a href="/source_sites">资源</a></li>
+                <li><a href="/source">资源</a></li>
                 <li><a href="/timer">时光轴</a></li>
-				<li><a href="/about_us">关于十月</a></li>
+				<li><a href="/about">关于十月</a></li>
 			</ul>
     </div>
 </template>

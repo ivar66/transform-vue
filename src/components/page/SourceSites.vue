@@ -45,7 +45,7 @@
                     <span>工具资源</span>
                 </div>
                 <div class="item-list">
-                    <el-tooltip placement="top" effect="light" v-for = "(item,index_tools) in backendLists" :key="index_tools">
+                    <el-tooltip placement="top" effect="light" v-for = "(item,index_tools) in toolLists" :key="index_tools">
                         <div slot="content">{{item.content}}</div>
                         <a :href="item.url" class="title"><el-tag type="warning">{{item.title}}</el-tag></a>
                     </el-tooltip>
@@ -88,6 +88,11 @@
                             'content' : '一套基于 Vue.js 的高质量UI 组件库',
                             'url' : 'https://www.iviewui.com/',
                             'title' : 'iView组件库',
+                        },
+                        {
+                            'content' : '拥有所有的前端以及web相关网站的导航',
+                            'url' : 'http://www.alloyteam.com/nav/',
+                            'title' : 'WEB前端导航',
                         }
                     ],
                     'backendLists' :[
@@ -144,6 +149,21 @@
                             'content' : '漂亮的代码截图',
                             'url' : 'https://carbon.now.sh/',
                             'title' : '漂亮的代码截图',
+                        },
+                        {
+                            'content' : '动画解LeetCode题目',
+                            'url' : 'https://github.com/MisterBooo/LeetCodeAnimation',
+                            'title' : '动画解LeetCode题目',
+                        },
+                        {
+                            'content' : 'LeetCode 题解',
+                            'url' : 'https://github.com/azl397985856/leetcode',
+                            'title' : 'LeetCode 题解',
+                        },
+                        {
+                            'content' : '通过分析github代码库总结出来的工程师代码书写习惯 ',
+                            'url' : 'http://alloyteam.github.io/CodeGuide/',
+                            'title' : 'Code Guide For Front',
                         }
                     ],
                     'loading' :true

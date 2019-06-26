@@ -6,12 +6,12 @@ import router from './router'
 import ElementUI from "element-ui";
 
 import "element-ui/lib/theme-chalk/index.css";
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.use(VueAwesomeSwiper);
+// Vue.use(VueAwesomeSwiper);
 
 /* eslint-disable no-new */
 new Vue({

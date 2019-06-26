@@ -19,11 +19,6 @@ export default new Router({
     routes: [
         {
             path: "/",
-            name: "index",
-            component: Index
-        },
-        {
-            path: "/2",
             name: "index2",
             component: Index2
         },
@@ -38,7 +33,7 @@ export default new Router({
             component: BlogDetail
         },
         {
-            path: "/about_us",
+            path: "/about",
             name: "AboutUs",
             component: AboutUs
         },
@@ -48,7 +43,7 @@ export default new Router({
             component: ProjectDemo
         },
         {
-            path: "/source_sites",
+            path: "/source",
             name: "SourceSites",
             component: SourceSites
         },
