@@ -30,6 +30,7 @@
                             <span>{{item.user_name}}</span>
                             <el-divider direction="vertical"></el-divider>
                             <span class="tag">{{item.category_name}}</span>
+                            <!--:style="randomRgb()"-->
                         </div>
                     </el-card>
                     <div class="load-more" v-on:click="onLoad" v-if="has_more"><span>加载更多...</span></div>
@@ -43,6 +44,16 @@
                         <div class="right-content">
                             <div class="name"><span>October</span></div>
                             <div class="feature"><span>后端打杂人员，代码洁癖，业余摄影</span></div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card content-right-card-bottom">
+                        <div slot="header" class="clearfix">
+                            <span>热门标签</span>
+                        </div>
+                        <div class="tag-list">
+                            <a :href="item.url" class="title" v-for = "(item,tag_index) in tagLists" :key="tag_index">
+                                <el-tag type="warning" :style="randomRgb()">{{item.tag_name}}</el-tag>
+                            </a>
                         </div>
                     </el-card>
                 </div>
@@ -66,6 +77,32 @@
                 number: 5,    //第五条数据
                 has_more:false,
                 loading:true, // 是否显示loading
+                tagLists:[
+                    {
+                        'url':'baidu.com',
+                        'tag_name':'测试',
+                    },
+                    {
+                        'url':'hha.com',
+                        'tag_name':'测试1',
+                    },
+                    {
+                        'url':'baidu.com',
+                        'tag_name':'测试',
+                    },
+                    {
+                        'url':'hha.com',
+                        'tag_name':'测试1',
+                    },
+                    {
+                        'url':'baidu.com',
+                        'tag_name':'测试',
+                    },
+                    {
+                        'url':'hha.com',
+                        'tag_name':'测试1',
+                    }
+                ]
             }
         },
         name: "Index2",
@@ -123,6 +160,12 @@
                     .catch((error) => {
                         console.log(error);
                     });
+            },
+            randomRgb: function () {
+                let R = Math.floor(Math.random() * 255);
+                let G = Math.floor(Math.random() * 255);
+                let B = Math.floor(Math.random() * 255);
+                return { background: 'rgb(' + R + ',' + G + ',' + B + ')' };
             }
         }
     }
@@ -137,7 +180,7 @@
         padding: 0;
     }
     .el-main {
-        width: 1000px;
+        width: 1100px;
         min-height: 800px;
         margin: 0 auto;
     }
@@ -156,15 +199,18 @@
     .el-carousel__item:nth-child(2n+1) {
         background-color: #d3dce6;
     }
+
     .content{
         display: flex;
         flex-direction: row;
     }
+
+    /*左边列表相关的css属性*/
     .content-left{
-        width: 600px;
+        width: 700px;
     }
     .content-left-card{
-        width: 600px;
+        width: 700px;
         margin-bottom: 10px;
     }
     .box-card .card-header{
@@ -192,46 +238,43 @@
     }
     .box-card .card-footer span{
         font-size: 12px;
-        /*line-height: 10px;*/
-        /*display: flex;*/
-        /*justify-content: space-between;*/
     }
     .box-card .card-footer .tag{
         color: #fa8c16;
+        padding: 2px;
         background: #fff7e6;
         border-color: #ffd591;
     }
+
+    /*加载更多相关的*/
     .load-more{
-        /*使的span标签剧中*/
+        /*使的span标签居中*/
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         height: 30px;
-
-        /*text-align: center;*/
         border: 1px solid #EBEEF5;
         background-color: #FFF;
+        font-size: 10px;
     }
     .load-more:hover{
         cursor:hand;
         background:#0081cb;
     }
+
     .content-right{
         margin-left: 20px;
     }
+    /* 个人介绍相关的css*/
     .content-right-card{
         width: 350px;
-        /*height: 300px;*/
+        min-height: 300px;
         margin-top: 50px;
-        /*display: flex;*/
-        /*flex-direction: row;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
+        margin-bottom: 10px;
     }
     .content-right-card .right-header{
         display: flex;
-        /*flex-direction: row;*/
         justify-content: center;
         align-items: center;
     }
@@ -240,7 +283,6 @@
         height: 150px;
         max-width: 100%;
         border-radius: 50%;
-        /*margin: 0 auto;*/
     }
     .content-right-card .right-content{
         margin-top: 20px;
@@ -259,6 +301,18 @@
         line-height: 1.2;
         color: #2e3135;
         margin-bottom: 15px;
+    }
+    /*热门标签*/
+    .tag-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .tag-list a {
+        margin-left: 5px;
+        margin-bottom: 8px;
+        text-align: center;
+        font-size: 25px;
     }
 
 </style>
