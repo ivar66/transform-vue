@@ -207,10 +207,10 @@
 
     /*左边列表相关的css属性*/
     .content-left{
-        width: 700px;
+        width: 750px;
     }
     .content-left-card{
-        width: 700px;
+        width: 750px;
         margin-bottom: 10px;
     }
     .box-card .card-header{
@@ -265,11 +265,11 @@
 
     .content-right{
         margin-left: 20px;
+        width: 300px;
     }
     /* 个人介绍相关的css*/
     .content-right-card{
-        width: 350px;
-        min-height: 300px;
+        min-height: 250px;
         margin-top: 50px;
         margin-bottom: 10px;
     }

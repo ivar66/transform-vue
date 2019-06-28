@@ -25,13 +25,12 @@ export default{
 .top-nav{
     height: 60px;
     background:#6987DB;
-	margin-left: 0px;
+	/*margin-left: 0px;*/
 }
 .top-nav ul{
     list-style: none;
-    margin: 0;
+    margin: 0 180px auto auto;
     float: right;
-    margin-right: 180px;
 }
 .top-nav ul li,.top-nav .logo{
     display: inline-block;
@@ -50,14 +49,15 @@ export default{
     /* padding: 10px; */
     margin-left: 200px;
 }
-.logo{
-	font-size: 20px;
+.top-nav .logo{
+	font-size: 25px;
 	font-weight: 700;
 	letter-spacing: 2px;/*字体间距*/
 }
-.logo a{
+.top-nav .logo a{
 	color: #fff;
 	text-decoration: none;
+
 }
 </style>
 
