@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="footer-copyright">
             <div class="footer-copyright-text">
-                联系我们 | 京ICP备18028786 | 关于我
+                联系我们 | <a style = "color: #888;" target="_blank" href="http://www.beian.miit.gov.cn">京ICP备18028786号-1</a>
             </div>
             <div class="footer-copyright-text">
                 Copyright © 2019 lovecathy.com 十月/喝醉的清茶 版权所有
